@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useEffect, useState } from "react";
 import User from "../utils/interfaces";
@@ -26,13 +26,10 @@ export default function Usuarios() {
   };
 
   return (
-    <>
-      <BaseContainer
-        modalform={<ModalFormContainer btntext="Añadir Usuario" />}
-        heading="Usuarios"
-        content={<ListaDeUsuarios users={users}></ListaDeUsuarios>}
-      ></BaseContainer>
-      <h1>Hola</h1>
-    </>
+    <BaseContainer
+      modalform={<ModalFormContainer btntext="Añadir Usuario" />}
+      heading="Usuarios"
+      content={<ListaDeUsuarios users={users}></ListaDeUsuarios>}
+    ></BaseContainer>
   );
 }

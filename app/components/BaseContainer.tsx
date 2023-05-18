@@ -14,11 +14,19 @@ export default function BaseContainer({
 }: BaseContainerProps) {
   return (
     <Box textAlign="center" py={10} px={6}>
-      <Box display="flex" justifyContent="flex-end">{modalform}</Box>
+      <Box display="flex" justifyContent="flex-end">
+        {modalform}
+      </Box>
       <Heading as="h2" size="xl" mt={6} mb={2}>
         {heading}
       </Heading>
-      {content}
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+      >
+        {content}
+      </Box>
     </Box>
   );
 }

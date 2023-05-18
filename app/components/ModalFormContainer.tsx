@@ -1,6 +1,5 @@
 import { useDisclosure } from "@chakra-ui/react";
 import React from "react";
-
 import {
   Modal,
   ModalOverlay,
@@ -12,6 +11,7 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import { MdAddCircle } from "react-icons/md";
+import BasicForm from "./BasicForm";
 
 interface ModalFormContainerProps {
   btntext: string;
@@ -46,23 +46,8 @@ export default function ModalFormContainer({
           <ModalHeader>Create your account</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
-            {/* <FormControl>
-              <FormLabel>First name</FormLabel>
-              <Input ref={initialRef} placeholder="First name" />
-            </FormControl>
-
-            <FormControl mt={4}>
-              <FormLabel>Last name</FormLabel>
-              <Input placeholder="Last name" />
-            </FormControl> */}
+            <BasicForm></BasicForm>
           </ModalBody>
-
-          <ModalFooter>
-            <Button colorScheme="blue" mr={3}>
-              Guardar
-            </Button>
-            <Button onClick={onClose}>Cancel</Button>
-          </ModalFooter>
         </ModalContent>
       </Modal>
     </>
