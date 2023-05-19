@@ -2,16 +2,19 @@ import { useState } from "react";
 import PasswordInput from "./PasswordInput";
 import InputField from "./InputField";
 import { Button, Box } from "@chakra-ui/react";
+import SelectField from "./SelectInput";
 
 interface FormData {
   username: string;
   password: string;
+  contrato: string;
 }
 
 export default function BasicForm() {
   const [formData, setFormData] = useState<FormData>({
     username: "",
     password: "",
+    contrato: "",
   });
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -74,6 +77,21 @@ export default function BasicForm() {
             setFormData((prevFormData) => ({
               ...prevFormData,
               password: value,
+            }))
+          }
+        />
+
+        <SelectField
+          name="contratos"
+          id="contratos"
+          htmlFor="contratos"
+          label="Contratos"
+          apiUrl="https://jsonplaceholder.typicode.com/todos"
+          value={formData.contrato}
+          onChange={(value) =>
+            setFormData((prevFormData) => ({
+              ...prevFormData,
+              contrato: value,
             }))
           }
         />

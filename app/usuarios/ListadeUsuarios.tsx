@@ -1,4 +1,4 @@
-import User from "../utils/interfaces";
+import { User } from "../utils/interfaces";
 import TableButton from "../components/ButtonTable";
 import {
   Table,
@@ -20,7 +20,7 @@ interface UserTableProps {
 const ListaDeUsuarios: React.FC<UserTableProps> = ({ users }) => {
   return (
     <TableContainer>
-      <Table size='sm'>
+      <Table size="sm">
         <Thead>
           <Tr>
             <Th>ID</Th>

@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link } from "@chakra-ui/next-js";
+import SearchBar from "./SearchBar";
 
 const Links = [
   { label: "Home", route: "/dashboard" },
@@ -47,25 +48,24 @@ export function Navigation() {
               spacing={4}
               display={{ base: "none", md: "flex" }}
             >
-              <>
-                {Links.map(({ label, route }) => (
-                  <div key={route}>
-                    <Link
-                      px={2}
-                      py={1}
-                      rounded={"md"}
-                      _hover={{
-                        textDecoration: "none",
-                        bg: "gray.200",
-                      }}
-                      href={route}
-                    >
-                      {label}
-                    </Link>
-                  </div>
-                ))}
-              </>
+              {Links.map(({ label, route }) => (
+                <div key={route}>
+                  <Link
+                    px={2}
+                    py={1}
+                    rounded={"md"}
+                    _hover={{
+                      textDecoration: "none",
+                      bg: "gray.200",
+                    }}
+                    href={route}
+                  >
+                    {label}
+                  </Link>
+                </div>
+              ))}
             </HStack>
+          <SearchBar />
           </HStack>
           <Flex alignItems={"center"}>
             <Menu>

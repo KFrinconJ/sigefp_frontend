@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import User from "../utils/interfaces";
+import { User } from "../utils/interfaces";
 import ListaDeUsuarios from "./ListadeUsuarios";
 import BaseContainer from "../components/BaseContainer";
 import ModalFormContainer from "../components/ModalFormContainer";

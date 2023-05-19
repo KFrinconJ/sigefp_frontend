@@ -34,7 +34,7 @@ export default function PasswordInput({
 
   return (
     <FormControl isRequired>
-        <FormLabel htmlFor={htmlFor}>{label}</FormLabel>
+      <FormLabel htmlFor={htmlFor}>{label}</FormLabel>
       <InputGroup size="md">
         <Input
           pr="4.5rem"
