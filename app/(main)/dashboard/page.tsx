@@ -3,7 +3,7 @@
 import { Box, Container, Flex, Icon } from "@chakra-ui/react";
 import { FcAbout } from "react-icons/fc";
 
-import { Card } from "../components/Card";
+import { Card } from "../../components/Card";
 
 export default function gridListWith() {
   return (

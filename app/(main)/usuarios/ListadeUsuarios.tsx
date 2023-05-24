@@ -1,5 +1,5 @@
-import { User } from "../utils/interfaces";
-import TableButton from "../components/ButtonTable";
+import { User } from "../../utils/interfaces";
+import TableButton from "../../components/ButtonTable";
 import {
   Table,
   Thead,
