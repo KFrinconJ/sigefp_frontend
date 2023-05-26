@@ -15,10 +15,12 @@ import BasicForm from "./BasicForm";
 
 interface ModalFormContainerProps {
   btntext: string;
+  headertext:string;
 }
 
 export default function ModalFormContainer({
   btntext,
+  headertext,
 }: ModalFormContainerProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -43,7 +45,7 @@ export default function ModalFormContainer({
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Create your account</ModalHeader>
+          <ModalHeader>{headertext} </ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <BasicForm></BasicForm>

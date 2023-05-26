@@ -1,12 +1,13 @@
-import { useState } from "react";
 import {
-  InputGroup,
+  FormControl,
+  FormLabel,
   Input,
+  InputGroup,
   InputRightElement,
   Button,
-  FormLabel,
-  FormControl,
 } from "@chakra-ui/react";
+import { useState } from "react";
+import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 
 interface PasswordInputProps {
   name: string;
@@ -25,29 +26,27 @@ export default function PasswordInput({
   htmlFor,
   onChange,
 }: PasswordInputProps) {
-  const [show, setShow] = useState(false);
-  const handleClick = () => setShow(!show);
-
+  const [showPassword, setShowPassword] = useState(false);
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };
-
   return (
     <FormControl isRequired>
       <FormLabel htmlFor={htmlFor}>{label}</FormLabel>
-      <InputGroup size="md">
+      <InputGroup>
         <Input
-          pr="4.5rem"
-          type={show ? "text" : "password"}
-          placeholder="Enter password"
+          type={showPassword ? "text" : "password"}
           name={name}
-          id={id}
           value={value}
+          id={id}
           onChange={handleInputChange}
         />
-        <InputRightElement width="4.5rem">
-          <Button h="1.75rem" size="sm" onClick={handleClick}>
-            {show ? "Hide" : "Show"}
+        <InputRightElement h={"full"}>
+          <Button
+            variant={"ghost"}
+            onClick={() => setShowPassword((showPassword) => !showPassword)}
+          >
+            {showPassword ? <ViewIcon /> : <ViewOffIcon />}
           </Button>
         </InputRightElement>
       </InputGroup>

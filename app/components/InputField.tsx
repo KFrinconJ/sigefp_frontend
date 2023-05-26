@@ -1,12 +1,10 @@
 import {
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
   Input,
   FormControl,
 } from "@chakra-ui/react";
 
-type InputFieldType = "text" | "email" | "password";
+type InputFieldType = "text" | "email" | "date" | "number";
 
 interface InputFieldProps {
   htmlFor: string;

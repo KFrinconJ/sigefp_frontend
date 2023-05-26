@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FormLabel, Select } from "@chakra-ui/react";
+import { FormControl, FormLabel, Select } from "@chakra-ui/react";
 
 import { SelectFieldProps, Option } from "../utils/interfaces";
 
@@ -36,7 +36,7 @@ export default function SelectField({
   };
 
   return (
-    <>
+    <FormControl>
       <FormLabel htmlFor={htmlFor}>{label}</FormLabel>
       <Select name={name} id={id} value={value} onChange={handleSelectChange}>
         {options.map((option) => (
@@ -45,7 +45,7 @@ export default function SelectField({
           </option>
         ))}
       </Select>
-    </>
+    </FormControl>
   );
 }
 
