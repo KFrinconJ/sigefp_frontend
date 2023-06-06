@@ -11,7 +11,7 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import { MdAddCircle } from "react-icons/md";
-import BasicForm from "./BasicForm";
+import LoginForm from "./forms/LoginForm";
 
 interface ModalFormContainerProps {
   btntext: string;
@@ -48,7 +48,7 @@ export default function ModalFormContainer({
           <ModalHeader>{headertext} </ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
-            <BasicForm></BasicForm>
+            <LoginForm/>
           </ModalBody>
         </ModalContent>
       </Modal>

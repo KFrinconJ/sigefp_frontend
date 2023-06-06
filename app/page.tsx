@@ -8,7 +8,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import LoginForm from "./components/LoginForm";
+import LoginForm from "./components/forms/LoginForm";
 
 export default function LoginPage() {
 

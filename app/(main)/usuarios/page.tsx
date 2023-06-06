@@ -27,7 +27,7 @@ export default function Usuarios() {
 
   return (
     <BaseContainer
-      modalform={<ModalFormContainer btntext="Añadir Usuario" />}
+      modalform={<ModalFormContainer headertext="Agregar usuario" btntext="Añadir Usuario" />}
       heading="Usuarios"
       content={<ListaDeUsuarios users={users}></ListaDeUsuarios>}
     ></BaseContainer>

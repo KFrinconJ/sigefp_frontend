@@ -5,10 +5,9 @@ import {
     useColorModeValue,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import InputField from "./InputField";
-import PasswordInput from "./PasswordInput";
-import FormSubmitButton from "./FormSubmitButton";
-import SelectField from "./SelectInput";
+import InputField from "../inputs/InputField";
+import PasswordInput from "../inputs/PasswordInput";
+import FormSubmitButton from "../buttons/FormSubmitButton";
 interface LoginFormData {
     mail: string;
     password: string;
