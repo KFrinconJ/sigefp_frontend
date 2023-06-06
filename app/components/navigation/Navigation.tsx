@@ -65,7 +65,7 @@ export function Navigation() {
                 </div>
               ))}
             </HStack>
-          <SearchBar />
+            <SearchBar />
           </HStack>
           <Flex alignItems={"center"}>
             <Menu>

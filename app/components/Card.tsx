@@ -6,27 +6,31 @@ import {
   Flex,
   Heading,
   Button,
-  useColorModeValue,
+  LinkBox,
+  LinkOverlay
 } from "@chakra-ui/react";
 import { ReactElement } from "react";
+import NextLink from 'next/link'
 
 interface CardProps {
   heading: string;
   icon: ReactElement;
-  href: string;
+  linkpage: string;
+  cantidad: number;
 }
 
-export function Card({ heading, icon, href }: CardProps) {
+export function Card({ heading, icon, linkpage, cantidad }: CardProps) {
   return (
-    <Box
+    <LinkBox as="article"
+      borderWidth="1px"
+      borderColor="black"
       maxW={{ base: "full", md: "275px" }}
       w={"full"}
-      borderWidth="1px"
       borderRadius="lg"
       overflow="hidden"
-      p={5}
-    >
-      <Stack align={"center"} justify={"center"} spacing={2}>
+      p={5}>
+
+      <Stack align={"center"} justify={"center"} spacing={2} >
         <Flex
           w={16}
           h={16}
@@ -34,17 +38,18 @@ export function Card({ heading, icon, href }: CardProps) {
           justify={"center"}
           color={"white"}
           rounded={"full"}
-          bg={useColorModeValue("gray.100", "gray.700")}
+          bg={"gray.200"}
+
         >
           {icon}
         </Flex>
         <Box mt={2}>
-          <Heading size="md">{heading}</Heading>
+          <LinkOverlay as={NextLink} href="/usuarios">
+            <Heading size="md">{heading}</Heading>
+            <Heading size="md" textAlign="center">200</Heading>
+          </LinkOverlay>
         </Box>
-        <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
-          Learn more
-        </Button>
       </Stack>
-    </Box>
+    </LinkBox>
   );
 }
