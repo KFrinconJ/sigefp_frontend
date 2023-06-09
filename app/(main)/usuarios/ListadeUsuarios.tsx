@@ -1,5 +1,5 @@
 import { User } from "../../utils/interfaces";
-import TableButton from "../../components/ButtonTable";
+import TableButton from "../../components/buttons/ButtonTableModal";
 import {
   Table,
   Thead,
@@ -24,13 +24,13 @@ const ListaDeUsuarios: React.FC<UserTableProps> = ({ users }) => {
         <Thead>
           <Tr>
             <Th>ID</Th>
-            <Th>Name</Th>
-            <Th>Username</Th>
-            <Th>Email</Th>
-            <Th>Address</Th>
-            <Th>Phone</Th>
-            <Th>Website</Th>
-            <Th>Company</Th>
+            <Th>Nombre</Th>
+            <Th>Apellido</Th>
+            <Th>Correo</Th>
+            <Th>Rol</Th>
+            <Th>Cargo</Th>
+            <Th>Contrato</Th>
+            <Th>Vinculacion</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -40,7 +40,7 @@ const ListaDeUsuarios: React.FC<UserTableProps> = ({ users }) => {
               <Td>{user.name}</Td>
               <Td>{user.username}</Td>
               <Td>{user.email}</Td>
-              <Td>{`${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}`}</Td>
+              <Td>{user.address.street}</Td>
               <Td>{user.phone}</Td>
               <Td>{user.website}</Td>
               <Td>{user.company.name}</Td>

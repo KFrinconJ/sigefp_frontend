@@ -18,7 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link } from "@chakra-ui/next-js";
-import SearchBar from "./SearchBar";
+import SearchBar from "../navigation/SearchBar";
 
 const Links = [
   { label: "Home", route: "/dashboard" },
@@ -65,7 +65,7 @@ export function Navigation() {
                 </div>
               ))}
             </HStack>
-            <SearchBar />
+          <SearchBar />
           </HStack>
           <Flex alignItems={"center"}>
             <Menu>

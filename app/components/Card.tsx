@@ -44,9 +44,9 @@ export function Card({ heading, icon, linkpage, cantidad }: CardProps) {
           {icon}
         </Flex>
         <Box mt={2}>
-          <LinkOverlay as={NextLink} href="/usuarios">
+          <LinkOverlay as={NextLink} href={linkpage}>
             <Heading size="md">{heading}</Heading>
-            <Heading size="md" textAlign="center">200</Heading>
+            <Heading size="md" textAlign="center">{cantidad}</Heading>
           </LinkOverlay>
         </Box>
       </Stack>

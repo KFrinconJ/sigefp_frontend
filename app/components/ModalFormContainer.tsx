@@ -11,10 +11,11 @@ import {
 } from "@chakra-ui/react";
 import { MdAddCircle } from "react-icons/md";
 import LoginForm from "./forms/LoginForm";
+import CreateUserForm from "./forms/usuarios/CreateUserForm";
 
 interface ModalFormContainerProps {
   btntext: string;
-  headertext:string;
+  headertext: string;
 }
 
 export default function ModalFormContainer({
@@ -47,8 +48,8 @@ export default function ModalFormContainer({
           <ModalHeader>{headertext} </ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
-            <LoginForm/>
-          </ModalBody>
+            <CreateUserForm />          
+            </ModalBody>
         </ModalContent>
       </Modal>
     </>

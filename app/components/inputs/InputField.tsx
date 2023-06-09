@@ -11,7 +11,7 @@ interface InputFieldProps {
   type: InputFieldType;
   id: string;
   label: string;
-  value: string;
+  value: string | number;
   onChange: (value: string) => void;
   required: boolean;
 }

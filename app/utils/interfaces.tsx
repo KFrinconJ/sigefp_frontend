@@ -1,3 +1,5 @@
+//Interfaces Generales
+
 export interface User {
   id: number;
   name: string;
@@ -16,12 +18,29 @@ export interface User {
   };
 }
 
+export interface Oficina {
+
+}
+
+export interface ProgramaAcademico {
+}
+
+export interface FuncionSustantiva {
+  
+}
+
+
+
+
+
+
+
 // Interfaces para los Inputs
 
 interface BaseInputProps {
   id: string;
   label: string;
-  value: string;
+  value: string | number;
   name: string;
   htmlFor: string;
   onChange: (value: string) => void;

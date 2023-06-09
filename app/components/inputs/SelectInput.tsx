@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { FormControl, FormLabel, Select } from "@chakra-ui/react";
 
-import { SelectFieldProps, Option } from "../utils/interfaces";
+import { SelectFieldProps, Option } from "../../utils/interfaces";
 
-export default function SelectField({
+export default function SelectInput({
   id,
   name,
   htmlFor,
