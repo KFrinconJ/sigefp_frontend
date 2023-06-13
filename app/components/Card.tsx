@@ -5,7 +5,6 @@ import {
   Stack,
   Flex,
   Heading,
-  Button,
   LinkBox,
   LinkOverlay
 } from "@chakra-ui/react";

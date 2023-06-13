@@ -23,6 +23,7 @@ export default function BasicTable<RowDataType>({
       columns={columns}
       progressPending={progressPending}
       pagination={pagination}
+      noHeader={true}
     />
   );
 }

@@ -1,40 +1,67 @@
 //Interfaces Generales
 
 export interface User {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-  };
-  phone: string;
-  website: string;
-  company: {
-    name: string;
-  };
+  nombre: string;
+  apellido: string;
+  cargo: string;
+  password: string;
+  mail: string;
+  rol_id: string;
+  contrato_id: number | null;
+  vinculacion: number | null;
+}
+
+export interface UserDelete {
+  mail: string;
+  id: string;
 }
 
 export interface Oficina {
+  id: string;
+  nombre: string;
+  usuario: string;
+}
 
+export interface Adscripcion {
+  id: string;
+  nombre: string;
+  usuario: string;
 }
 
 export interface ProgramaAcademico {
+  id: string;
+  nombre: string;
+  nivel: string;
+  adscripcion: string;
+  modalidad: string;
+  area: string;
+}
+
+export interface PeriodoAcademico {
+  id: string;
+  fechaInicial: Date;
+  fechaFinal : Date;
+  estado: boolean;
+  cantidadSemanas: number;
+  nombre: string;
+  horas: number;
 }
 
 export interface FuncionSustantiva {
-  
+  id:string;
+  nombre: string;
+  programaAcademico: string;
+  oficina: string;
 }
 
 
-
-
-
-
-
+export interface SubFuncionSustantiva {
+  id: string;
+  nombre: string;
+  horas: number;
+  periodoAcademico: string;
+  funcionSustantiva: string;
+}
 // Interfaces para los Inputs
 
 interface BaseInputProps {

@@ -8,23 +8,37 @@ import {
   ModalBody,
   ModalCloseButton,
   ButtonGroup,
-  IconButton
+  IconButton,
 } from "@chakra-ui/react";
 import { MdDelete, MdEdit } from "react-icons/md";
+import { ReactElement } from "react";
 
 interface ButtonTableModal {
   headerText: string;
   idItem: number;
+  formularioEditar: ReactElement;
+  formularioEliminar: ReactElement;
 }
 
-export default function ButtonTableModal({headerText, idItem
+export default function ButtonTableModal({
+  headerText,
+  idItem,
+  formularioEditar,
+  formularioEliminar,
 }: ButtonTableModal) {
-  const { isOpen: isOpenEditModal, onOpen: onOpenEditModal, onClose: onCloseEditModal } = useDisclosure();
-  const { isOpen: isOpenDeleteModal, onOpen: onOpenDeleteModal, onClose: onCloseDeleteModal } = useDisclosure();
+  const {
+    isOpen: isOpenEditModal,
+    onOpen: onOpenEditModal,
+    onClose: onCloseEditModal,
+  } = useDisclosure();
+  const {
+    isOpen: isOpenDeleteModal,
+    onOpen: onOpenDeleteModal,
+    onClose: onCloseDeleteModal,
+  } = useDisclosure();
 
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
-
 
   return (
     <>
@@ -34,14 +48,14 @@ export default function ButtonTableModal({headerText, idItem
           icon={<MdEdit />}
           colorScheme="yellow"
           variant="outline"
-          aria-label='Editar'
+          aria-label="Editar"
         />
         <IconButton
           onClick={onOpenDeleteModal}
           icon={<MdDelete />}
           colorScheme="red"
           variant="outline"
-          aria-label='Eliminar'
+          aria-label="Eliminar"
         />
       </ButtonGroup>
 
@@ -53,11 +67,11 @@ export default function ButtonTableModal({headerText, idItem
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Editar {headerText} {idItem} </ModalHeader>
+          <ModalHeader>
+            Editar {headerText} {idItem}{" "}
+          </ModalHeader>
           <ModalCloseButton />
-          <ModalBody pb={6}>
-            {/* Aquí va el formulario para la acción de edición */}
-          </ModalBody>
+          <ModalBody pb={6}>{formularioEditar}</ModalBody>
         </ModalContent>
       </Modal>
 
@@ -69,11 +83,11 @@ export default function ButtonTableModal({headerText, idItem
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Eliminar {headerText} {idItem} </ModalHeader>
+          <ModalHeader>
+            Eliminar {headerText} {idItem}{" "}
+          </ModalHeader>
           <ModalCloseButton />
-          <ModalBody pb={6}>
-            {/* Aquí va el formulario para la acción de eliminación */}
-          </ModalBody>
+          <ModalBody pb={6}>{formularioEliminar}</ModalBody>
         </ModalContent>
       </Modal>
     </>

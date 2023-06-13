@@ -5,13 +5,13 @@ import FormSubmitButton from "../../buttons/FormSubmitButton";
 import SelectInput from "../../inputs/SelectInput";
 import { User } from "@/app/utils/interfaces";
 
-export default function CreateUserForm() {
+export default function EditUserForm() {
   const [formData, setFormData] = useState<User>({
-    nombre: "",
-    apellido: "",
-    cargo: "",
-    password: "",
-    mail: "",
+    nombre: "kevin",
+    apellido: "rincon",
+    cargo: "vicerector",
+    password: "1234",
+    mail: "krincon5@udi.edu.co",
     rol_id: "4",
     contrato_id: null,
     vinculacion: null,

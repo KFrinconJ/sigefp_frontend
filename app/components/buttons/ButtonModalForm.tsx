@@ -1,5 +1,5 @@
 import { useDisclosure } from "@chakra-ui/react";
-import React from "react";
+import React, { ReactElement } from "react";
 import {
   Modal,
   ModalOverlay,
@@ -10,18 +10,19 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import { MdAddCircle } from "react-icons/md";
-import LoginForm from "./forms/LoginForm";
-import CreateUserForm from "./forms/usuarios/CreateUserForm";
 
-interface ModalFormContainerProps {
+interface ButtonModalFormProps {
   btntext: string;
   headertext: string;
+  formulario: ReactElement;
 }
 
-export default function ModalFormContainer({
+export default function ButtonModalForm({
   btntext,
   headertext,
-}: ModalFormContainerProps) {
+  formulario,
+
+}: ButtonModalFormProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const initialRef = React.useRef(null);
@@ -48,8 +49,8 @@ export default function ModalFormContainer({
           <ModalHeader>{headertext} </ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
-            <CreateUserForm />          
-            </ModalBody>
+            {formulario}
+          </ModalBody>
         </ModalContent>
       </Modal>
     </>
